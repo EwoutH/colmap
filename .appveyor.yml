@@ -6,6 +6,7 @@ cache:
 
 build_script:
   - cmd: set PATH=%APPVEYOR_BUILD_FOLDER%\build\__install__\lib\;C:\Qt\5.14\msvc2017_64\bin\;%PATH%
+  - cmd: set Boost_INCLUDE_DIR=C:\Libraries\boost_1_73_0
   - cmd: set CTEST_OUTPUT_ON_FAILURE=1
   - cmd: set QT_QPA_PLATFORM=offscreen
   - cmd: C:\Python38-x64\python.exe scripts\python\build.py --no_ssl_verification --build_path %APPVEYOR_BUILD_FOLDER%\build --colmap_path . --boost_path C:\Libraries\boost_1_73_0 --qt_path C:\Qt\5.14\msvc2017_64 --build_type %CONFIGURATION%
